@@ -1,0 +1,182 @@
+/* For huge desktop: */
+@media only screen and (min-width: 1281px) {
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+  *{margin: 0;padding: 0;font-size: 14px;box-sizing: border-box;font-family: 'Raleway', sans-serif;}
+  html,body{display: grid;height: 100%;width: 100%;place-items: center;background-image:linear-gradient(0deg, rgba(66, 2, 2, 0.664), rgba(66, 2, 2, 0.664)), url("../img/bg.jpg");background-color: rgb(190, 55, 55);background-repeat: no-repeat;background-size: cover;}
+  ::selection{background: rgba(136, 0, 0, 0.452);color: #fff;}
+  .wrapper{overflow: hidden;width: 28%;background: #fff;padding: 30px;border-radius: 5px;box-shadow: 0px 15px 20px rgba(0,0,0,0.1);}
+  .wrapper-signup{width: 60%;height: fit-content;margin: 30px;}
+  .wrapper-signup .form-container{padding: 30px;}
+  .section-con{float: left;width: 49%;}
+  .wrapper .title-text{width: 100%;text-align: center;}
+  .wrapper .title{width: 100%;font-size: 1.2rem;font-weight: bolder;text-align: center;transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);}
+  input[type="radio"]{display: none;}
+  #signup:checked ~ .slider-tab{left: 50%;}
+  #login:checked ~ label.signup{color: #000;}
+  #login:checked ~ label.login{cursor: default;user-select: none;}
+  .wrapper .form-container{width: 100%;overflow: hidden;}
+  .form-container .form-inner{display: flex;width: 200%;}
+  .form-container .form-inner form{width: 50%;transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);padding: 10px;}
+  .form-inner form .field{height: 45px;width: 100%;margin-top: 10px;}
+  .form-inner form .col-md-4,.col-md-2{height: 45px;}
+  .form-inner form select{height: 40px;margin-top: 5px;}
+  .form-inner form .mb-3{height: 40px;margin-top: 5px;}
+  .form-inner form .col-md-6{height: 45px;}
+  .form-inner form .field-select{height: 45px;margin-top: 10px;}
+  .form-inner form .field-contact{height: 45px;width: 100%;margin-top: 10px;border-radius: 5px;border: 1px solid lightgrey;}
+  .form-inner form .field input{height: 100%;width: 100%;outline: none;padding-left: 15px;border-radius: 5px;border: 1px solid lightgrey;font-size: 14px;transition: all 0.3s ease;}
+  .form-inner form .field-select select{height: 100%;width: 100%;color: #494949;outline: none;padding-left: 15px;padding-right: 15px;border-radius: 5px;border: 1px solid lightgrey;font-size: 14px;transition: all 0.3s ease;}
+  .form-inner form .field-contact select, input{height: 100%;width: 70%;color: #494949;outline: none;padding-left: 15px;padding-right: 15px;border: none;font-size: 14px;transition: all 0.3s ease;}
+  .form-inner form .field input:focus{border-color: #000;
+    /* box-shadow: inset 0 0 3px #fb6aae; */}
+  .form-inner form .field input::placeholder{color: #999;transition: all 0.3s ease;}
+  form .field input:focus::placeholder{color: #b3b3b3;}
+  .form-inner form .pass-link{margin-top: 5px;margin-top: 10px;}
+  .form-inner form .signup-link{text-align: center;margin-top: 20px;}
+  .form-inner form .pass-link a,
+  .form-inner form .signup-link a{color: #ff0000;text-decoration: none;text-decoration: none;outline: none;}
+  .form-inner form .pass-link a:hover,
+  .form-inner form .signup-link a:hover{text-decoration: none;}
+  form .btn{height: 50px;width: 100%;border-radius: 5px;position: relative;overflow: hidden;background-color: #ff0000;}
+  form .btn input[type="submit"]{ height: 100%;width: 100%;z-index: 1;position: relative;background: none;border: none;color: #fff;padding-left: 0;border-radius: 5px;font-size: 14px;font-weight: 500;cursor: pointer;}
+  .row-profile-pic{width: fit-content; height: fit-content;margin: auto;margin-top: 2%;margin-bottom: 2%;}
+  form .btn-register{height: 50px;width: 100%;margin-left: 25%;border-radius: 5px;position: relative;overflow: hidden;background-color: #ff0000;}
+  form .btn-register input[type="submit"]{ height: 100%;width: 100%;z-index: 1;position: relative;background: none;border: none;color: #fff;padding-left: 0;border-radius: 5px;font-size: 14px;font-weight: 500;cursor: pointer;}
+  .row-profile-pic{width: fit-content; height: fit-content;margin: auto;margin-top: 2%;margin-bottom: 2%;}
+  .row-profile-pic.profile-picture {width: fit-content;max-height: fit-content;display: inline-block;}.file-upload {display: none; }
+  .circle {border-radius: 100% !important;overflow: hidden;width: 100px;height: 100px;margin-top: 0px;border: 2px solid #fff;}.circle  img {max-width: 100%;height: auto;}
+  
+  }
+     /* For desktop: */
+     @media only screen and (max-width: 1280px) and (min-width: 992px) {
+      *{margin: 0;padding: 0;font-size: 14px;box-sizing: border-box;font-family: 'Raleway', sans-serif;}
+  html,body{display: grid;height: 100%;width: 100%;place-items: center;background-image:linear-gradient(0deg, rgba(66, 2, 2, 0.664), rgba(66, 2, 2, 0.664)), url("../img/bg.jpg");background-color: rgb(190, 55, 55);background-repeat: no-repeat;background-size: cover;}
+  ::selection{background: #fa4299;color: #fff;}
+  .wrapper{overflow: hidden;width: 28%;background: #fff;padding: 30px;border-radius: 5px;box-shadow: 0px 15px 20px rgba(0,0,0,0.1);}
+  .wrapper-signup{width: 70%;}.section-con{float: left;width: 49%;}
+  .wrapper .title-text{display: flex;width: 200%;}
+  .wrapper .title{width: 50%;margin-bottom: 10px;font-size: 1.2rem;font-weight: bolder;text-align: center;transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);}
+  input[type="radio"]{display: none;}
+  #signup:checked ~ .slider-tab{left: 50%;}
+  #login:checked ~ label.signup{color: #000;}
+  #login:checked ~ label.login{cursor: default;user-select: none;}
+  .wrapper .form-container{width: 100%;overflow: hidden;}
+  .form-container .form-inner{display: flex;width: 200%;}
+  .form-container .form-inner form{width: 50%;transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);}
+  .form-inner form .field{height: 45px;width: 100%;margin-top: 10px;}
+  .form-inner form .field-select{height: 45px;width: 100%;margin-top: 10px;}
+  .form-inner form .field-contact{height: 45px;width: 100%;margin-top: 10px;border-radius: 5px;border: 1px solid lightgrey;}
+  .form-inner form .field input{height: 100%;width: 100%;outline: none;padding-left: 15px;border-radius: 5px;border: 1px solid lightgrey;font-size: 14px;transition: all 0.3s ease;}
+  .form-inner form .field-select select{height: 100%;width: 100%;color: #494949;outline: none;padding-left: 15px;padding-right: 15px;border-radius: 5px;border: 1px solid lightgrey;font-size: 14px;transition: all 0.3s ease;}
+  .form-inner form .field-contact select, input{height: 100%;width: 70%;color: #494949;outline: none;padding-left: 15px;padding-right: 15px;border: none;font-size: 14px;transition: all 0.3s ease;}
+  .form-inner form .label{color: #ff0000; text-transform: uppercase;height: 45px;width: 100%;margin-top: 10px;}
+  .form-inner form .field input:focus{border-color: #000;
+    /* box-shadow: inset 0 0 3px #fb6aae; */}
+  .form-inner form .field input::placeholder{color: #999;transition: all 0.3s ease;}
+  form .field input:focus::placeholder{color: #b3b3b3;}
+  .form-inner form .pass-link{margin-top: 5px;}
+  .form-inner form .signup-link{text-align: center;margin-top: 20px;}
+  .form-inner form .pass-link a,
+  .form-inner form .signup-link a{color: #ff0000;text-decoration: none;}
+  .form-inner form .pass-link a:hover,
+  .form-inner form .signup-link a:hover{text-decoration: underline;}
+  form .btn{height: 50px;width: 100%;border-radius: 5px;position: relative;overflow: hidden;background-color: #ff0000;}
+  form .btn input[type="submit"]{ height: 100%;width: 100%;z-index: 1;position: relative;background: none;border: none;color: #fff;padding-left: 0;border-radius: 5px;font-size: 14px;font-weight: 500;cursor: pointer;}
+  form .btn-register{height: 50px;width: 100%;margin-left: 25%;border-radius: 5px;position: relative;overflow: hidden;background-color: #ff0000;}
+  form .btn-register input[type="submit"]{ height: 100%;width: 100%;z-index: 1;position: relative;background: none;border: none;color: #fff;padding-left: 0;border-radius: 5px;font-size: 14px;font-weight: 500;cursor: pointer;}
+  .row-profile-pic{width: fit-content; height: fit-content;margin: auto;margin-top: 2%;margin-bottom: 2%;}
+    .row-profile-pic.profile-picture {width: fit-content;max-height: fit-content;display: inline-block;}.file-upload {display: none; }
+    .circle {border-radius: 100% !important;overflow: hidden;width: 100px;height: 100px;margin-top: 0px;border: 2px solid #fff;}.circle  img {max-width: 100%;height: auto;}
+  
+     }
+    /* For tablets: */ 
+    @media only screen and (max-width: 991px) and (min-width: 501px) {
+  *{margin: 0;padding: 0;font-size: 14px;box-sizing: border-box;font-family: 'Raleway', sans-serif;}
+  html,body{display: grid;height: 100%;width: 100%;place-items: center;background-image:linear-gradient(0deg, rgba(66, 2, 2, 0.664), rgba(66, 2, 2, 0.664)), url("../img/bg.jpg");background-color: rgb(190, 55, 55);background-repeat: no-repeat;background-size: cover;}
+  ::selection{background: #fa4299;color: #fff;}
+  .wrapper{overflow: hidden;width: 50%;background: #fff;padding: 30px;border-radius: 5px;box-shadow: 0px 15px 20px rgba(0,0,0,0.1);}
+  .wrapper-signup{width: 85%;margin-top: 30px;margin-bottom: 30px;}.section-con{width: 49%;display: block;}
+  .section-con-two{margin-top: 10px;}
+  .wrapper .title-text{display: flex;width: 100%;}
+  .wrapper .title{width: 100%;margin-bottom: 10px;font-size: 1.2rem;font-weight: bolder;text-align: center;transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);}
+  input[type="radio"]{display: none;}
+  #signup:checked ~ .slider-tab{left: 50%;}
+  #login:checked ~ label.signup{color: #000;}
+  #login:checked ~ label.login{cursor: default;user-select: none;}
+  .wrapper .form-container{width: 100%;overflow: hidden;}
+  .form-container .form-inner{display: flex;width: 100%;}
+  .form-container .form-inner-login{display: flex;width: 100%;}
+  .form-container .form-inner form{width: 100%;transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);}
+  .form-inner form .field{height: 45px;width: 100%;margin-top: 10px;}
+  .form-inner form .form-inner-login{height: 45px;width: 90%;margin-top: 10px;}
+  .form-inner form .field-select{height: 45px;width: 100%;margin-top: 10px;}
+  .form-inner form .field-contact{height: 45px;width: 100%;margin-top: 10px;border-radius: 5px;border: 1px solid lightgrey;}
+  .form-inner form .field input{height: 100%;width: 100%;outline: none;padding-left: 15px;border-radius: 5px;border: 1px solid lightgrey;font-size: 14px;transition: all 0.3s ease;}
+  .form-inner form .form-inner-login input{height: 100%;width: 90%;outline: none;padding-left: 15px;border-radius: 5px;border: 1px solid lightgrey;font-size: 14px;transition: all 0.3s ease;}
+  .form-inner form .field-select select{height: 100%;width: 100%;color: #494949;outline: none;padding-left: 15px;padding-right: 15px;border-radius: 5px;border: 1px solid lightgrey;font-size: 14px;transition: all 0.3s ease;}
+  .form-inner form .field-contact select, input{height: 100%;width: 70%;color: #494949;outline: none;padding-left: 15px;padding-right: 15px;border: none;font-size: 14px;transition: all 0.3s ease;}
+  .form-inner form .label{color: #ff0000; text-transform: uppercase;height: 45px;width: 100%;margin-top: 10px;}
+  .form-inner form .field input:focus{border-color: #000;
+    /* box-shadow: inset 0 0 3px #fb6aae; */}
+  .form-inner form .field input::placeholder{color: #999;transition: all 0.3s ease;}
+  form .field input:focus::placeholder{color: #b3b3b3;}
+  .form-inner form .pass-link{margin-top: 5px;}
+  .form-inner form .signup-link{text-align: center;margin-top: 20px;}
+  .form-inner-login form .signup-link{text-align: center;margin-top: 20px;}
+  .form-inner form .pass-link a,
+  .form-inner form .signup-link a{color: #ff0000;text-decoration: none;}
+  .form-inner form .pass-link a:hover,
+  .form-inner form .signup-link a:hover{text-decoration: underline;}
+  form .btn{height: 50px;width: 100%;border-radius: 5px;position: relative;overflow: hidden;background-color: #ff0000;}
+  form .btn input[type="submit"]{ height: 100%;width: 100%;z-index: 1;position: relative;background: none;border: none;color: #fff;padding-left: 0;border-radius: 5px;font-size: 14px;font-weight: 500;cursor: pointer;}
+  .row-profile-pic{width: fit-content; height: fit-content;margin: auto;margin-top: 2%;margin-bottom: 2%;}
+    .row-profile-pic.profile-picture {width: fit-content;max-height: fit-content;display: inline-block;}.file-upload {display: none; }
+    .circle {border-radius: 100% !important;overflow: hidden;width: 100px;height: 100px;margin-top: 0px;border: 2px solid #fff;}.circle  img {max-width: 100%;height: auto;}
+  
+     }
+    /* For mobile phones: */
+    @media only screen and (max-width:500px) {
+      *{margin: 0;padding: 0;font-size: 14px;box-sizing: border-box;font-family: 'Raleway', sans-serif;}
+  html,body{display: grid;height: 100%;width: 100%;place-items: center;background-color: #ff00003f;}
+  ::selection{background: rgba(136, 0, 0, 0.452);color: #fff;}
+  .wrapper{overflow: hidden;width: 85%;background: #fff;padding: 30px;border-radius: 5px;box-shadow: 0px 15px 20px rgba(0,0,0,0.1);}
+  .wrapper-signup{width: 85%;margin-top: 30px;margin-bottom: 30px;}.section-con{width: 49%;display: block;}
+  .section-con-two{margin-top: 10px;}
+  .wrapper .title-text{display: flex;width: 100%;}
+  .wrapper .title{width: 100%;margin-bottom: 10px;font-size: 1.2rem;font-weight: bolder;text-align: center;transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);}
+  input[type="radio"]{display: none;}
+  #signup:checked ~ .slider-tab{left: 50%;}
+  #login:checked ~ label.signup{color: #000;}
+  #login:checked ~ label.login{cursor: default;user-select: none;}
+  .wrapper .form-container{width: 100%;overflow: hidden;}
+  .form-container .form-inner{display: flex;width: 100%;}
+  .form-container .form-inner-login{display: flex;width: 100%;}
+  .form-container .form-inner form{width: 100%;transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);}
+  .form-inner form .field{height: 45px;width: 100%;margin-top: 10px;}
+  .form-inner form .form-inner-login{height: 45px;width: 90%;margin-top: 10px;}
+  .form-inner form .field-select{height: 45px;width: 100%;margin-top: 10px;}
+  .form-inner form .field-contact{height: 45px;width: 100%;margin-top: 10px;border-radius: 5px;border: 1px solid lightgrey;}
+  .form-inner form .field input{height: 100%;width: 100%;outline: none;padding-left: 15px;border-radius: 5px;border: 1px solid lightgrey;font-size: 14px;transition: all 0.3s ease;}
+  .form-inner form .form-inner-login input{height: 100%;width: 90%;outline: none;padding-left: 15px;border-radius: 5px;border: 1px solid lightgrey;font-size: 14px;transition: all 0.3s ease;}
+  .form-inner form .field-select select{height: 100%;width: 100%;color: #494949;outline: none;padding-left: 15px;padding-right: 15px;border-radius: 5px;border: 1px solid lightgrey;font-size: 14px;transition: all 0.3s ease;}
+  .form-inner form .field-contact select, input{height: 100%;width: 70%;color: #494949;outline: none;padding-left: 15px;padding-right: 15px;border: none;font-size: 14px;transition: all 0.3s ease;}
+  .form-inner form .label{color: #800000; text-transform: uppercase;height: 45px;width: 100%;margin-top: 10px;}
+  .form-inner form .field input:focus{border-color: #000;
+    /* box-shadow: inset 0 0 3px #fb6aae; */}
+  .form-inner form .field input::placeholder{color: #999;transition: all 0.3s ease;}
+  form .field input:focus::placeholder{color: #b3b3b3;}
+  .form-inner form .pass-link{margin-top: 5px;}
+  .form-inner form .signup-link{text-align: center;margin-top: 20px;}
+  .form-inner-login form .signup-link{text-align: center;margin-top: 20px;margin-left: 0%;}
+  .form-inner form .pass-link a,
+  .form-inner form .signup-link a{color: #800000;text-decoration: none;}
+  .form-inner form .pass-link a:hover,
+  .form-inner form .signup-link a:hover{text-decoration: underline;}
+  form .btn{height: 50px;width: 100%;border-radius: 5px;position: relative;overflow: hidden;background-color: #800000;}
+  form .btn input[type="submit"]{ height: 100%;width: 100%;z-index: 1;position: relative;background: none;border: none;color: #fff;padding-left: 0;border-radius: 5px;font-size: 14px;font-weight: 500;cursor: pointer;}
+  .row-profile-pic{width: fit-content; height: fit-content;margin: auto;margin-top: 2%;margin-bottom: 2%;}
+    .row-profile-pic.profile-picture {width: fit-content;max-height: fit-content;display: inline-block;}.file-upload {display: none; }
+    .circle {border-radius: 100% !important;overflow: hidden;width: 100px;height: 100px;margin-top: 0px;border: 2px solid #fff;}.circle  img {max-width: 100%;height: auto;}
+  
+     }
+    
