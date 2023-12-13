@@ -34,21 +34,7 @@ if(strlen($password) < 8 ) {
     header("Location:../admin/failure.php?id=$id&error=Password must be at least 8 characters!");
 } else {
 
-                        // Generate the validating username and email
-                        $sql="select * from users where (username='$username' or email='$email');";
-                        $res=mysqli_query($conn,$sql);
-                      
-                        if (mysqli_num_rows($res) > 0) {
-                            $row = mysqli_fetch_assoc($res);
-                            if($email == isset($row['email'])) {
-                                header("Location:../admin/failure.php?id=$id&error=email already exists");
-                            }
-                            if($username == isset($row['username'])) {
-                                header("Location:../admin/failure.php?id=$id&error=username already exists");
-                            }
-							
-                        } else {
-			
+                    // Generate the validating username and email			
 				$sql="select * from users where (username='$username' or email='$email');";
 
 				$res=mysqli_query($conn,$sql);
@@ -146,7 +132,7 @@ if(strlen($password) < 8 ) {
 			else{
 				header("Location:../admin/failure.php?id=$id");
 			}
-		}}}
+		}}
 		$conn->close();
 		?>	
 	</body>

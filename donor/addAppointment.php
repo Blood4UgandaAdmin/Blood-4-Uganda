@@ -1,23 +1,18 @@
 <?php  
  //entry.php  
- session_start();  
+ session_start(); 
+ include('../include/dbconfig.php'); 
  $id = $_GET['id'];
 			$_SESSION["id"] = $id;
  if(!isset($_SESSION["id"]))  
  {  
   header("Location:../index.php");  
- }  
-include('../include/dbconfig.php');
-include('../include/profilepic.php');
-$sql = "SELECT * FROM `admin` WHERE `adminID` = '".$id."'";
+ } 
+ ?>
+<?php  
+$sql = "SELECT * FROM users ";
 $results = mysqli_query($conn, $sql);
 while($row = mysqli_fetch_array($results)){
-$uname = $row['fname']." ".$row['sname'];	
-$admin_id = $row['adminID'];
-$fname = $row['fname'];		
-$email = $row['email'];	
-  
-	
 }
 ?>
 <!DOCTYPE html>
@@ -27,6 +22,7 @@ $email = $row['email'];
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 <link rel="icon" href="../img/logo-2.png" type="image/icon type">
 <link rel="stylesheet" href="../css/style.css">
+
 <script>
   $(document).ready(function() {
   setTimeout(function() {
@@ -72,14 +68,12 @@ $email = $row['email'];
 <div class="home">
   <div class="col-topbar nav-mobile hide-desktop">
     <div class="topnav">
-      <a href="#news" class="hide-app">Campaigns Information</a>
-      <a href="index.php<?php echo"?id=".$id."";?>" class="topAction-mobile">
+      <a href="#news" class="topAction-mobile">
         <span class="back-btn"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#fff" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path><path fill="#fff" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path></g></svg></span> 
       </a>
       <a href="#news" class="topAction-mobile">
-     <span class="topDetails">Campaigns Information</span> 
+     <span class="topDetails">Admin Information</span> 
       </a>
-     
     </div>
 
   </div>
@@ -140,340 +134,186 @@ $email = $row['email'];
     </a> 
  
 </div>
-
 <div class="content">
   <section >
-    <div class="col-topbar show-tab-topbar">
+    <div class="col-topbar show-tab">
       <div class="topnav">
-      <a href="index.php<?php echo"?id=".$id."";?>" class="topAction-mobile">
-        <span class="back-btn"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#000" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path><path fill="#000" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path></g></svg></span> 
-      </a>
-        <a href="#news" >Campaigns Information</a>
-        <a href="#contact" class="hide-desktop blood-logo" onclick="openNav()">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Menu / Menu_Alt_03"> <path id="Vector" d="M5 17H13M5 12H19M5 7H13" stroke="#900000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
+        <a href="#news" class="show-tab topAction" style="margin-top: -5px;">
+          <span class="back-btn"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#000000" d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"></path><path fill="#000000" d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"></path></g></svg></span> 
         </a>
-        
+        <a href="#news" class="show-tab topAction" style="margin-top: -10px;">
+       <span class="topDetails">New Admin</span> 
+        </a>
       </div>
 
-    </div>
-    <!--pop-up-->
-    <!-- The Modal 1 Account-->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-    </div>
-
-    <center>
-      <div class="model-profile">
-      <img src="<?php echo $imageUrl;?>" alt="">
-      </div>
-    </center>
-    
-    <div class="modal-body">
-      <h3><?php echo $uname;?></h3>
-      <p><?php echo $email;?></p>
-      <div class="modal-icon" style="margin-top: 10px;height:40px">
-        <div class="col-model-btn" style="height:40px">
-          <div class="model-btn">
-            <a href="">Log Out</a>
-          </div>
-          <div class="model-btn model-btn-2">
-            <a href="">Edit Profile</a>
-          </div>
-        </div>  
-      </div>
-    </div>
-
-  </div>
-
-</div>
-    <!-- The Modal 2 Notification -->
-<div id="myModal2" class="modal model-notification">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header modal-header-notification">
-      <span class="close2">&times;</span>
-      <h4 style="color:#fff">Notifications</h4>
     </div>
     
-    <div class="modal-body">
-    <?php
-$sel=mysqli_query($conn,"SELECT * FROM notifications WHERE `currentUserID` = '".$id."'");
-// Check for query success and handle errors
-if (!$sel) {
-    die("Query failed: " . mysqli_error($conn));
-}
-
-// Check if there are rows returned by the query
-if (mysqli_num_rows($sel) > 0) {
-    while ($row = mysqli_fetch_assoc($sel)) {
-        ?>
-            <div class="modal-icon">
-              <a href="#">
-                <div class="icon-details">
-                 <div class="icon">
-                  <img src="../img/menu-icon/camp.png" alt="">
-                 </div>
-                <div class="message-body-notification camp-title" >
-                  <div class="head-divide">
-                    <div class="dive-one" style="width:70%">
-                      <h3 class="ellipsis">Notification</h3>
-                    </div>
-                    <div class="dive-two" >
-                      <p><small><?= $row['notificationTime'];?></small></p>
-                    </div>
-                  </div>
-                  
-                  <p style="width:90%"><?= $row['messages'];?></p>
-                </div>    
-                </div>
-                </a> 
-            </div>
-            <?php
-    }
-} else {
-    echo "<div class=\"modal-icon\" style=\"width:60%;margin-left:40%;height: fit-content;\">";
-    echo "<center>";
-    echo "<div class=\"icon-details\" style=\"display: block;\">";
-    echo "<center>";
-    echo "<div class=\"icon\">";
-    echo "<img src=\"../img/menu-icon/sad.png\" alt=\"\">";
-    echo "</div>";
-    echo "</center>";
-    echo "<div class=\"message-body-notification camp-title\" > ";
-        echo "<p style=\"width:100%;\">No Record Found.</p>";
-    echo "</div> ";
-    echo "</div> ";
-    echo "</center> ";
-    echo "</div>";
-}
-?>
-    </div>
-
-  </div>
-
-</div>
   </section>
-  
-  <!--section search section -->
-  <section>
-    <div class="container-search">
-    <form class="nosubmit">
-      <input class="nosubmit" type="search" placeholder="Search From Here...">
-    </form>
-    </div>
-  </section>
+
   <!--section body -->
   <section>
-    <div class="col-body">
+    <div class="col-body ">
+      <div class="col-table">
+        <div class="container container-form">
+        <form id="regForm" action="../include/newAdmin.php<?php echo "?id=".$id."";?>" method="POST">
+              <div class="column one">
+                <h4>Personal Info:</h4>
+                  <div class="field username">
+                      <label for="Username_">BloodBank</label>
+                      <select name="bloodBank" class="form-control" required>
+                  <?php
+						//load all university supervisors
+					
+						$sql = "SELECT * FROM `bloodBanks`";
+						$result = mysqli_query($conn,$sql);
+						
+						while($row = mysqli_fetch_array($result)){
+							$name = $row['fullname'];
+							$BID = $row['BID'];
+							
+							echo "<option value=\"$BID\" class=\"mail-user\">".$name."</option>";
 
-      <div class="col-side-one" >
-      <div class="col-side-one-item hide-app">
-      <div class="head-title">
-          <h5 class="color-maroon">
-          Categories
-          </h5>
-          </div>
-          <div class="col-quick-action">
-
-          <div class="col-quick-action-details">
-            <a href="ongoingCamp.php?id=<?php echo $id ?>">
-                <div class="col-quick-icon">
-                    <center>
-                        <img src="../img/menu-icon/ongoing.png" alt="">
-                    </center>
-                </div>
-                <div class="col-quick-description" style="color:#900">
-                    Ongoing 
-                </div>
-            </a>
-        </div>
-          <div class="col-quick-action-details">
-          <a href="upcomingCamp.php?id=<?php echo $id ?>">
-                <div class="col-quick-icon">
-                    <center>
-                        <img src="../img/menu-icon/upcoming.png" alt="">
-                    </center>
-                </div>
-                <div class="col-quick-description" style="color:#900">
-                    Upcoming
-                </div>
-            </a>
-        </div>
-          <div class="col-quick-action-details">
-            <a href="completedCamp.php?id=<?php echo $id ?>">
-                <div class="col-quick-icon">
-                    <center>
-                        <img src="../img/menu-icon/completed.png" alt="">
-                    </center>
-                </div>
-                <div class="col-quick-description" style="color:#900">
-                    Completed
-                </div>
-            </a>
-        </div>
-          <div class="col-quick-action-details">
-            <a href="ongoingCamp.php?id=<?php echo $id ?>">
-                <div class="col-quick-icon">
-                    <center>
-                        <img src="../img/menu-icon/cancelled.png" alt="">
-                    </center>
-                </div>
-                <div class="col-quick-description" style="color:#900">
-                    Cancelled
-                </div>
-            </a>
-        </div>
-        </div>   
-
-      </div>
-      
-      <div class="col-side-one-item item-quick-action" style="box-shadow: none;overflow-y: hidden;">
-        <div class="head-title" style="border-bottom: none;">
-          <h5 class="color-maroon">
-            Categories
-          </h5>
-          </div>
-          <div class="item-quick-action-mobile">
-        <div class="col-quick-action">
-        <div class="col-quick-action-details">
-            <a href="ongoingCamp.php?id=<?php echo $id ?>">
-                <div class="col-quick-icon">
-                    <center>
-                        <img src="../img/menu-icon/ongoing.png" alt="">
-                    </center>
-                </div>
-                <div class="col-quick-description" style="color:#900">
-                    Ongoing 
-                </div>
-            </a>
-        </div>
-          <div class="col-quick-action-details">
-            <a href="upcomingCamp.php?id=<?php echo $id ?>">
-                <div class="col-quick-icon">
-                    <center>
-                        <img src="../img/menu-icon/upcoming.png" alt="">
-                    </center>
-                </div>
-                <div class="col-quick-description" style="color:#900">
-                    Upcoming
-                </div>
-            </a>
-        </div>
-          <div class="col-quick-action-details">
-          <a href="completedCamp.php?id=<?php echo $id ?>">
-                <div class="col-quick-icon">
-                    <center>
-                        <img src="../img/menu-icon/completed.png" alt="">
-                    </center>
-                </div>
-                <div class="col-quick-description" style="color:#900">
-                    Completed
-                </div>
-            </a>
-        </div>
-          <div class="col-quick-action-details">
-            <a href="ongoingCamp.php?id=<?php echo $id ?>">
-                <div class="col-quick-icon">
-                    <center>
-                        <img src="../img/menu-icon/cancelled.png" alt="">
-                    </center>
-                </div>
-                <div class="col-quick-description" style="color:#900">
-                    Cancelled
-                </div>
-            </a>
-        </div>
-
-      </div>
-  </div>
-      </div>
-      </div>
-      <div class="col-side-two">
-      <div class="col-side-one-item item-three">
-        <div class="head-title" style="border-bottom: none;display: flex;">
-          <h5 class="color-black title-table">
-            Today's Campaigns
-          </h5>
-          </div>
-          <div class="modal-body col-32">
-          <?php
-	$sel=mysqli_query($conn,"select * from camps WHERE startingDate <= CURDATE() AND endingDate >= CURDATE()");
-  // Check for query success and handle errors
-if (!$sel) {
-  die("Query failed: " . mysqli_error($conn));
-}
-
-// Check if there are rows returned by the query
-if (mysqli_num_rows($sel) > 0) {
-	while($row=mysqli_fetch_assoc($sel))
-	{
-    $campID = $row['campID'];
-		?>  
-            <div class="modal-icon">
-              <a href="#">
-                <div class="icon-details">
-                 <div class="icon">
-                  <img src="../img/menu-icon/camp.png" alt="">
-                 </div>
-                <div class="message-body-notification camp-title" >
-                  <div class="head-divide">
-                    <div class="dive-one">
-                      <h3 class="ellipsis"><?= $row['fname'];?> <?= $row['sname'];?></h3>
-                    </div>
-                    
-                  </div>
+							
+						}
+					?>
                   
-                  <p><?= $row['phoneCode'];?> <?= $row['tel'];?></p>
-                </div>    
+                </select>
+                  </div>
+                  <div class="field password">
+                      <label for="Password_">First Name</label>
+                      <input type="text" name="fname" id="Password_" required>
+                  </div>
+                  <div class="field email">
+                      <label for="Email_">Date of Birth</label>
+                      <input type="date" id="birthdate" name="dob" max="" required>
+                      <script>
+                        // Calculate the maximum date (18 years ago from the current date)
+                        var currentDate = new Date();
+                        var maxDate = new Date(currentDate);
+                        maxDate.setFullYear(maxDate.getFullYear() - 18);
+                      
+                        // Format the date as "YYYY-MM-DD" (required format for the date input)
+                        var formattedMaxDate = maxDate.toISOString().split('T')[0];
+                      
+                        // Set the max attribute of the date input
+                        document.getElementById('birthdate').setAttribute('max', formattedMaxDate);
+                      </script>
+                  </div>
+                  <div class="field email">
+                      <label for="Email_">Gender</label><br>
+                      <select name="gender" id="select" required>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                        </select>
+                  </div>
+                  <div class="field email">
+                      <label for="Email_">Blood Group</label><br>
+                      <select name="bloodGroup" id="select" required>
+                      <?php					
+						$sql = "SELECT * FROM `bloodgroup`";
+						$result = mysqli_query($conn,$sql);
+						
+						while($row = mysqli_fetch_array($result)){
+							$name = $row['bloodGroupName'];
+							$BID = $row['bloodID'];
+							
+							echo "<option value=\"$BID\" class=\"mail-user\">".$name."</option>";
+						}
+					?>
+                           </select>
+                  </div>
+                  <h4>Contact Info:</h4>
+                  <div class="field phone">
+                    <label for="Phone_">phone</label>
+                    <div class="phone-con" style="padding: 10px;">
+                      <div class="phone-code">
+                         <select name="phoneCode" id="select" required style="background-color: transparent;">
+                            <option data-countryCode="UG" value="+256">+256</option>
+                          <option data-countryCode="DZ" value="+213">+213</option>
+              
+                          </select>
+                      </div>
+                      <div class="phone-number">
+                         <input type="tel" placeholder="7000000000" name="phone" required  style="background-color: transparent;">
+                      </div>
+                   </div>
                 </div>
-                </a> 
-            </div>
-            <?php
-    }
-} else {
-    echo "<div class=\"modal-icon\" style=\"width:60%;margin-left:40%;height: fit-content;\">";
-    echo "<center>";
-    echo "<div class=\"icon-details\" style=\"display: block;\">";
-    echo "<center>";
-    echo "<div class=\"icon\">";
-    echo "<img src=\"../img/menu-icon/sad.png\" alt=\"\">";
-    echo "</div>";
-    echo "</center>";
-    echo "<div class=\"message-body-notification camp-title\" > ";
-        echo "<p style=\"width:100%;\">No Record Found.</p>";
-    echo "</div> ";
-    echo "</div> ";
-    echo "</center> ";
-    echo "</div>";
-}
-?>
-            
-            
-          </div>
+                  <div class="field email">
+                      <label for="Email_">Email</label>
+                      <input type="email" name="email" id="Email_" required>
+                  </div>
+              </div>
+              <div class="column two">
+                <h4>Address Info:</h4>
+                  <div class="field phone">
+                      <label for="Phone_">Country</label>
+                      <select name="country" id="select" required>
+                        <option value='Uganda'>Uganda</option>
+                      </select>
+                  </div>
+                  <div class="field Brief">
+                      <label for="Brief_">Region</label>
+                      <select id="stateSelect" name="region" size="1" onchange="makeSubmenu(this.value)" required>
+                        <option value="central">Central</option>
+                        <option value="eastern">Eastern</option>
+                        <option value="northern">Northern</option>
+                        <option value="western">Western</option>
+                    </select>
+                  </div>
+                  <div class="field Brief">
+                      <label for="Brief_">District</label>
+                      <select id="citySelect"name="district" size="1" required>
+                        <option></option>
+                        </select>
+                  </div>
+                  <div class="field Brief">
+                      <label for="Brief_">Village or TC</label>
+                      <input type="text" name="plotNo" id="Email_">
+                  </div>
+                  <h4>Login Info:</h4>
+                  <div class="field Brief">
+                    <label for="Brief_">Username</label>
+                    <input type="text" name="username" id="Email_" required>
+                </div>
+                  <div class="field Brief">
+                    <label for="Brief_">Password</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+              </div>
+             
+              <div class="form-btn-column">
+                <input type="reset" value="Reset" class="reset">
+                <input type="submit" value="Submit" class="register">
+              </div>
+              
+             
+              
+          </form>
+      </div>
 
       </div>
-      </div>
+
+
     </div>
+
   </section>
   
 </div>
 </div>
 
- <!--FABS-->
- <div class="fabs">
-  <a href="addDonor.php">
-  <div class="plus"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 18L14 18M17 15V21M4 21C4 17.134 7.13401 14 11 14C11.695 14 12.3663 14.1013 13 14.2899M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></div>
-</div>
+<!-- jQuery -->
+<script src='https://code.jquery.com/jquery-3.7.0.js'></script>
+<!-- Data Table JS -->
+<script src='https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js'></script>
+<script src='https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js'></script>
+<script src='https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js'></script>
 <script src="../js/popUp-profile.js"></script>
-<script src="../js/greeting.js"></script>
+<script src="../js/cities.js"></script>
 <script src="../js/popUp-notification.js"></script>
 <script src="../js/popUp-profilePhone.js"></script>
 <script src="../js/autoSlides.js"></script>
 <script src="../js/sidebar.js"></script>
+<script src="../js/sortingTable.js"></script>
 </body>
 </html>
