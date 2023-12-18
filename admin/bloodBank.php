@@ -1,15 +1,5 @@
 <?php  
- //entry.php  
- session_start(); 
- include('../include/dbconfig.php'); 
- $id = $_GET['id'];
-			$_SESSION["id"] = $id;
- if(!isset($_SESSION["id"]))  
- {  
-  header("Location:../index.php");  
- } 
- ?>
-<?php  
+include('../include/dbconfig.php');
 $sql = "SELECT * FROM users ";
 $results = mysqli_query($conn, $sql);
 while($row = mysqli_fetch_array($results)){
@@ -87,62 +77,9 @@ while($row = mysqli_fetch_array($results)){
   <div class="sidebar-col-top">
     <img src="../img/logo.png">
   </div>
-   <a href="#">
-    <div class="icon-details">
-    <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="icomoon-ignore"> </g> <path d="M16 2.672l-5.331 5.331v-2.133h-4.265v6.398l-3.755 3.755 0.754 0.754 12.597-12.597 12.597 12.597 0.754-0.754-13.351-13.351zM7.47 6.937h2.132v2.132l-2.133 2.133v-4.265z" fill="#800000"> </path> <path d="M6.404 16.533v12.795h7.464v-7.464h4.265v7.464h7.464v-12.795l-9.596-9.596-9.596 9.596zM24.53 28.262h-5.331v-7.464h-6.398v7.464h-5.331v-11.287l8.53-8.53 8.53 8.53v11.287z" fill="#800000"> </path> </g></svg>
-    <div class="nav-name-col">Dashboard</div>    
-    </div>
-    </a> 
-   <a href="#">
-    <div class="icon-details">
-      <svg fill="#900000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path d="M415.996,351.253C414.823,289.6,378.663,235.2,340.263,177.6c-34.987-52.587-71.147-106.987-80.107-168.427 C259.303,3.947,254.716,0,249.383,0c-5.44,0.107-9.92,4.16-10.453,9.493c-6.613,61.76-40.747,117.44-73.707,171.2 c-36.16,59.093-70.293,114.773-69.227,176.32c1.6,86.08,73.067,154.987,160,154.987c0.96,0,2.027,0,2.987,0 c42.347-0.64,82.667-17.92,112.213-48.213C400.743,433.813,416.849,393.28,415.996,351.253z M355.836,448.853 c-25.6,26.24-60.587,41.28-97.28,41.813c-76.693,1.6-139.733-58.773-141.227-133.973c-1.067-55.36,31.573-108.48,66.027-164.693 c26.027-42.347,52.693-85.867,67.093-133.333c16.213,47.04,44.48,89.493,72,130.88c36.587,54.933,71.147,106.773,72.213,162.133 C395.409,387.947,381.436,422.933,355.836,448.853z"></path> <path d="M365.436,373.653c-5.653-1.493-11.52,1.92-13.013,7.573c-4.16,15.893-11.947,30.613-22.613,43.093 c-4.8,5.653-10.24,10.667-16.107,15.147c-4.693,3.52-5.653,10.24-2.133,14.933c3.52,4.693,10.24,5.653,14.933,2.133 c7.147-5.333,13.653-11.52,19.52-18.24c12.8-14.933,22.08-32.533,27.093-51.627C374.503,381.013,371.089,375.147,365.436,373.653 z"></path> </g> </g> </g> </g></svg>
-    <div class="nav-name-col">Blood Request</div>    
-    </div>
-    </a> 
-   
-   <a href="#">
-    <div class="icon-details">
-      <svg height="200px" width="200px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#900000;} </style> <g> <path class="st0" d="M496.771,326.221c-18.201-13.151-35.677-32.849-51.318-55.047c-23.496-33.29-42.933-72.082-56.371-102.445 c-6.726-15.181-11.966-28.274-15.516-37.527c-1.773-4.634-3.126-8.297-4.027-10.813c-0.452-1.25-0.791-2.206-1.018-2.854 c-0.221-0.633-0.324-0.926-0.324-0.926l-2.792-8.164l-8.528,1.25c-24.163,3.516-47.023,4.928-68.085,4.921 c-40.708,0.007-74.737-5.23-98.492-10.459c-11.879-2.611-21.184-5.208-27.476-7.142c-3.141-0.956-5.531-1.758-7.109-2.309 c-0.79-0.273-1.375-0.486-1.754-0.625l-0.404-0.148l-0.084-0.022l-10.544-4.053l-3.148,10.85l-0.102,0.368 c-2.295,7.958-44.217,146.209-129.078,255.369L0,370.089l300.752,52.053l2.732-1.096L512,337.24L496.771,326.221z M188.911,381.724 l-1.027-43.632c-32.874-3.464-48.446-67.485-48.446-67.485l-28.608,97.598l-73.671-12.754 c40.098-54.797,69.927-114.14,90.077-161.198c9.139-21.36,16.285-40.116,21.537-54.783 c30.164,125.312,96.144,218.35,127.53,257.377L188.911,381.724z M300.435,399.892c-22.08-25.361-108.575-132.462-139.442-281.767 c22.276,6.502,68.063,17.24,127.799,17.256c19.499,0,40.538-1.25,62.63-4.075c5.149,13.938,17.087,44.617,34.456,79.364 c11.809,23.625,26.123,49.096,42.61,72.479c12.699,17.984,26.678,34.702,41.984,48.412L300.435,399.892z"></path> </g> </g></svg>
-    <div class="nav-name-col">Camp Requests</div>    
-    </div>
-    </a> 
-    <a href="#">
-      <div class="icon-details">
-        <svg viewBox="0 0 48.00 48.00" xmlns="http://www.w3.org/2000/svg" fill="#900000" stroke="#900000" stroke-width="0.00000000000000000007"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>information-circle</title> <g id="Layer_2" data-name="Layer 2"> <g id="invisible_box" data-name="invisible box"> <rect width="48" height="48" fill="none"></rect> </g> <g id="icons_Q2" data-name="icons Q2"> <path d="M24,2A22,22,0,1,0,46,24,21.9,21.9,0,0,0,24,2Zm0,40A18,18,0,1,1,42,24,18.1,18.1,0,0,1,24,42Z"></path> <path d="M24,20a2,2,0,0,0-2,2V34a2,2,0,0,0,4,0V22A2,2,0,0,0,24,20Z"></path> <circle cx="24" cy="14" r="2"></circle> </g> </g> </g></svg>
-      <div class="nav-name-col">Acknowledgment</div>    
-      </div>
-      </a> 
-    <a href="#">
-      <div class="icon-details">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C7.71983 1.25 4.25004 4.71979 4.25004 9V9.7041C4.25004 10.401 4.04375 11.0824 3.65717 11.6622L2.50856 13.3851C1.17547 15.3848 2.19318 18.1028 4.51177 18.7351C5.26738 18.9412 6.02937 19.1155 6.79578 19.2581L6.79768 19.2632C7.56667 21.3151 9.62198 22.75 12 22.75C14.378 22.75 16.4333 21.3151 17.2023 19.2632L17.2042 19.2581C17.9706 19.1155 18.7327 18.9412 19.4883 18.7351C21.8069 18.1028 22.8246 15.3848 21.4915 13.3851L20.3429 11.6622C19.9563 11.0824 19.75 10.401 19.75 9.7041V9C19.75 4.71979 16.2802 1.25 12 1.25ZM15.3764 19.537C13.1335 19.805 10.8664 19.8049 8.62349 19.5369C9.33444 20.5585 10.571 21.25 12 21.25C13.4289 21.25 14.6655 20.5585 15.3764 19.537ZM5.75004 9C5.75004 5.54822 8.54826 2.75 12 2.75C15.4518 2.75 18.25 5.54822 18.25 9V9.7041C18.25 10.6972 18.544 11.668 19.0948 12.4943L20.2434 14.2172C21.0086 15.3649 20.4245 16.925 19.0936 17.288C14.4494 18.5546 9.5507 18.5546 4.90644 17.288C3.57561 16.925 2.99147 15.3649 3.75664 14.2172L4.90524 12.4943C5.45609 11.668 5.75004 10.6972 5.75004 9.7041V9Z" fill="#800"></path> </g></svg>
-      <div class="nav-name-col">Notifications</div>    
-      </div>
-      </a> 
-   <a href="#">
-    <div class="icon-details">
-     <svg fill="#900000"  height="200px" width="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 442 442" xml:space="preserve" stroke="#900000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M431.706,232.827h-1.108c-3.863-17.348-17.544-31.03-34.892-34.892v-23.229C395.706,78.373,317.333,0,221,0 S46.294,78.373,46.294,174.706v23.229c-17.348,3.863-31.03,17.544-34.892,34.892h-1.108c-5.523,0-10,4.478-10,10s4.477,10,10,10 h1.108c3.962,17.796,18.257,31.735,36.242,35.173c4.159,17.647,20.027,30.827,38.926,30.827c22.056,0,40-17.944,40-40v-72 c0-22.056-17.944-39.999-40-39.999c-7.384,0-14.303,2.019-20.246,5.523C67.589,88.128,136.482,20,221,20 c84.464,0,153.325,68.042,154.674,152.191c-5.881-3.404-12.698-5.363-19.968-5.363c-22.056,0-40,17.943-40,39.999v72 c0,22.056,17.944,40,40,40c18.918,0,34.799-13.205,38.938-30.879c6.229-1.232,12.007-3.724,17.062-7.201v44.167 c0,18.786-9.134,36.63-25.72,50.244C368.827,389.243,345.999,397,321.706,397h-64.907c-2.082-15.648-9.245-25-19.726-25h-37.5 c-19.299,0-35,15.701-35,35s15.701,35,35,35h37.5c10.482,0,17.645-9.352,19.726-25h64.907c60.654,0,110-41.31,110-92.086v-72.087 c5.523,0,10-4.478,10-10S437.229,232.827,431.706,232.827z M66.57,206.827c0-11.027,8.972-19.999,20-19.999 c11.028,0,20,8.972,20,19.999v72c0,11.028-8.972,20-20,20c-11.028,0-20-8.972-20-20c0-5.522-4.477-10-10-10 c-0.047,0-0.092,0.006-0.138,0.007c-0.047,0-0.092-0.007-0.138-0.007c-14.336,0-26-11.663-26-26c0-10.9,6.744-20.248,16.276-24.106 v25.996c0,5.522,4.477,10,10,10s10-4.478,10-10V206.827z M234.938,422h-35.366c-8.271,0-15-6.729-15-15s6.729-15,15-15h35.366 c1.049,2.163,2.489,7.271,2.489,15S235.987,419.837,234.938,422z M385.706,268.827c-5.523,0-10,4.478-10,10c0,11.028-8.972,20-20,20 s-20-8.972-20-20v-72c0-11.027,8.972-19.999,20-19.999s20,8.972,20,19.999v37.89c0,5.522,4.477,10,10,10s10-4.478,10-10V218.83 c9.387,3.926,16,13.203,16,23.997C411.706,257.164,400.042,268.827,385.706,268.827z"></path> </g></svg>
-    <div class="nav-name-col">Help and Support</div>    
-    </div>
-    </a> 
-   <a href="#">
-    <div class="icon-details">
-      <svg fill="#900000" viewBox="-2.88 -2.88 37.76 37.76" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#900000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M27 22c-1.646 0-3.103 0.8-4.013 2.028l-13.168-6.71c0.114-0.421 0.181-0.86 0.181-1.317 0-0.572-0.101-1.119-0.277-1.63l13.242-6.426c0.909 1.244 2.375 2.056 4.035 2.056 2.762 0 5-2.239 5-5s-2.238-5-5-5-5 2.239-5 5c0 0.388 0.049 0.764 0.133 1.127l-13.432 6.518c-0.915-1.009-2.231-1.646-3.7-1.646-2.761 0-5 2.239-5 5s2.239 5 5 5c1.59 0 3.004-0.744 3.92-1.902l13.222 6.739c-0.090 0.374-0.142 0.762-0.142 1.163 0 2.761 2.238 5 5 5s5-2.239 5-5-2.238-5-5-5zM27 2c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zM5 19c-1.657 0-3-1.343-3-3s1.343-3 3-3c1.657 0 3 1.344 3 3s-1.343 3-3 3zM27 30c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"></path> </g></svg>
-    <div class="nav-name-col">Invite a Friend</div>    
-    </div>
-    </a> 
-   <a href="#">
-    <div class="icon-details">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#900000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-    <div class="nav-name-col">Account</div>    
-    </div>
-    </a> 
-   <a href="#">
-    <div class="icon-details">
-      <svg width="212px" height="212px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4" stroke="#900" stroke-width="1.5" stroke-linecap="round"></path> <path d="M10 12H20M20 12L17 9M20 12L17 15" stroke="#900" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-    <div class="nav-name-col">Logout</div>    
-    </div>
-    </a> 
- 
+  <?php
+  include('sidebar.php')
+  ?>
 </div>
 
 <div class="content">
@@ -255,6 +192,7 @@ while($row=mysqli_fetch_assoc($sel))
 		?> 
       <div class="modal-icon">
         <a href="#" id="myBtn">
+          <div class="col-icon">
           <div class="icon-details">
            <div class="icon">
             <img src="../img/menu-icon/camp.png" alt="">
@@ -268,6 +206,10 @@ while($row=mysqli_fetch_assoc($sel))
             
             <p style="margin-top: -5px;"><?= $row['phoneCode'];?> <?= $row['tel'];?></p>
           </div>    
+          </div>
+          <div class="arrow">
+          <svg fill="#fff" height="200px" width="200px" version="1.1" id="XMLID_287_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-9.36 -9.36 42.72 42.72" xml:space="preserve" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-9.36" y="-9.36" width="42.72" height="42.72" rx="21.36" fill="#000" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="next"> <g> <polygon points="6.8,23.7 5.4,22.3 15.7,12 5.4,1.7 6.8,0.3 18.5,12 "></polygon> </g> </g> </g></svg>
+          </div>
           </div>
           </a> 
       </div>
@@ -315,10 +257,13 @@ while($row=mysqli_fetch_assoc($sel))
   
 </div>
 </div>
- <!--FABS-->
- <div class="fabs">
-  <a href="addBank.php<?php echo"?id=".$id."";?>">
-<div class="plus"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 13L12 13M12 13L9 13M12 13L12 10M12 13L12 16" stroke="#fff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M21.6359 12.9579L21.3572 14.8952C20.8697 18.2827 20.626 19.9764 19.451 20.9882C18.2759 22 16.5526 22 13.1061 22H10.8939C7.44737 22 5.72409 22 4.54903 20.9882C3.37396 19.9764 3.13025 18.2827 2.64284 14.8952L2.36407 12.9579C1.98463 10.3208 1.79491 9.00229 2.33537 7.87495C2.87583 6.7476 4.02619 6.06234 6.32691 4.69181L7.71175 3.86687C9.80104 2.62229 10.8457 2 12 2C13.1543 2 14.199 2.62229 16.2882 3.86687L17.6731 4.69181C19.9738 6.06234 21.1242 6.7476 21.6646 7.87495" stroke="#fff" stroke-width="1.5" stroke-linecap="round"></path> </g></svg></div>
+  <!--FABS-->
+  <div class="fabs">
+  <a href="index.php<?php echo"?id=".$id."";?>">
+<div class="plus">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M22 22L2 22" stroke="#fff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M2 11L6.06296 7.74968M22 11L13.8741 4.49931C12.7784 3.62279 11.2216 3.62279 10.1259 4.49931L9.34398 5.12486" stroke="#fff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M15.5 5.5V3.5C15.5 3.22386 15.7239 3 16 3H18.5C18.7761 3 19 3.22386 19 3.5V8.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M4 22V9.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M20 9.5V13.5M20 22V17.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M15 22V17C15 15.5858 15 14.8787 14.5607 14.4393C14.1213 14 13.4142 14 12 14C10.5858 14 9.87868 14 9.43934 14.4393M9 22V17" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 9.5C14 10.6046 13.1046 11.5 12 11.5C10.8954 11.5 10 10.6046 10 9.5C10 8.39543 10.8954 7.5 12 7.5C13.1046 7.5 14 8.39543 14 9.5Z" stroke="#fff" stroke-width="1.5"></path> </g></svg>
+</div>
+</a>
 </div>
 <!-- jQuery -->
 <script src='https://code.jquery.com/jquery-3.7.0.js'></script>
@@ -328,11 +273,15 @@ while($row=mysqli_fetch_assoc($sel))
 <script src='https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js'></script>
 <script src="../js/popUp-profile.js"></script>
 <script src="../js/greeting.js"></script>
-
+<script src="../js/shareApp.js"></script>
 <script src="../js/popUp-notification.js"></script>
 <script src="../js/popUp-profilePhone.js"></script>
 <script src="../js/autoSlides.js"></script>
 <script src="../js/sidebar.js"></script>
 <script src="../js/sortingTable.js"></script>
+<?php
+  // Close the database connection
+mysqli_close($conn);
+  ?>
 </body>
 </html>

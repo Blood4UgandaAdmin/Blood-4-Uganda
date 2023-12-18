@@ -1,20 +1,3 @@
-<?php  
- //entry.php  
- session_start(); 
- include('../include/dbconfig.php'); 
- $id = $_GET['id'];
-			$_SESSION["id"] = $id;
- if(!isset($_SESSION["id"]))  
- {  
-  header("Location:../index.php");  
- } 
- ?>
-<?php  
-$sql = "SELECT * FROM users ";
-$results = mysqli_query($conn, $sql);
-while($row = mysqli_fetch_array($results)){
-}
-?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -49,7 +32,7 @@ form .btn input[type="submit"]{ z-index: 1;position: relative;background: none;b
         <div class="form-inner">
           <form action="include/verify.php" method="POST" class="login">
            
-            <div class="signup-link">Go Back To <a href="index.php<?php echo"?id=".$id."";?>">Dashboard</a></div>
+            <div class="signup-link">Go Back To <a href="index.php">Dashboard</a></div>
           
           </form>
           
@@ -58,6 +41,9 @@ form .btn input[type="submit"]{ z-index: 1;position: relative;background: none;b
     </div>
 
    
-
+    <?php
+  // Close the database connection
+mysqli_close($conn);
+  ?>
   </body>
 </html>

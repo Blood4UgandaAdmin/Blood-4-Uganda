@@ -19,6 +19,7 @@
 			$region = $_POST['region'];
 			$district = $_POST['district'];
 			$plotNo = $_POST['plotNo'];
+			$remark = $_POST['remark'];
 			
 			$messages = "Congratulations! You have successfully Placed a request for the camp. Kindly wait for our responses.";
 			//$username = substr($fname, 0,1)."".$lname;
@@ -81,9 +82,9 @@
 				VALUES
 				('$notificationid','$RCID', '$messages', '$id')";
 			//inert into the bloodbanks table
-			$sql2 = "INSERT INTO requestcamp (RCID, campName,startDate,endDate,turnUp,offers,phoneCode, phone, email, country, regions, district, plotNo,requestedBy)
+			$sql2 = "INSERT INTO requestcamp (RCID, campName,startDate,endDate,turnUp,offers,phoneCode, phone, email, country, regions, district, plotNo,remark,requestedBy)
 						VALUES
-						('$RCID','$campName', '$startingDate', '$endingDate','$turnUp','$offers','$phoneCode','$tel','$email','$country','$region','$district','$plotNo', '$id')";
+						('$RCID','$campName', '$startingDate', '$endingDate','$turnUp','$offers','$phoneCode','$tel','$email','$country','$region','$district','$plotNo', '$remark','$id')";
 			$result = mysqli_query($conn, $sql); //runs the sql statement
 			$result2 = mysqli_query($conn, $sql2);
 			echo mysqli_error($conn);

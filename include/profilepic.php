@@ -1,4 +1,6 @@
 <?php  
+include('../include/dbconfig.php');
+$id=$_SESSION['id'];
 $sql = "SELECT * FROM `users` WHERE `userID` = '".$id."'";
 $results = mysqli_query($conn, $sql);
 while($row = mysqli_fetch_array($results)){

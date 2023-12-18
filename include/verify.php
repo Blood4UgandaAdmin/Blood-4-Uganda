@@ -26,25 +26,25 @@
 					
 					echo "<script type=\"text/javascript\">";
 						if($roles == "admin"){												
-							echo 'document.location = "../admin/index.php?id='.$id.'";';
+							echo 'document.location = "../admin/index.php";';
 						}
 						else if($roles == "donor"){		
-							echo 'document.location = "../donor/index.php?id='.$id.'";';
+							echo 'document.location = "../donor/index.php";';
 						}
 						else if($roles == "labtechnician"){
-							echo 'document.location = "../LabTechnician/index.php?id='.$id.'";';
+							echo 'document.location = "../LabTechnician/index.php";';
 						}	
 						else if($roles == "volunteer"){
-							echo 'document.location = "../volunteer/index.php?id='.$id.'";';
+							echo 'document.location = "../volunteer/index.php";';
 						}	
 						else if($roles == "branch"){
-							echo 'document.location = "../urs/index.php?id='.$id.'";';
+							echo 'document.location = "../urs/index.php";';
 						}	
 						else if($roles == "bloodbank"){
-							echo 'document.location = "../bloodBank/index.php?id='.$id.'";';
+							echo 'document.location = "../bloodBank/index.php";';
 						}	
 						else if($roles == "facility"){
-							echo 'document.location = "../facility/index.php?id='.$id.'";';
+							echo 'document.location = "../facility/index.php";';
 						}	
 								
 						else {
