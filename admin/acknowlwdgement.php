@@ -109,10 +109,16 @@
 
   <!--section body -->
   <section>
+  <?php
+			include('../include/dbconfig.php');
+			$sql = "SELECT  phoneCode, tel, sname, fname FROM donors";
+			$donors = mysqli_query($conn, $sql);
+      ?>
+
     <div class="col-body">
       <div class="col-table">
         <div class="container container-form">
-          <form action="" id="form">
+          <form action="" id="form" method="POST">
               <div class="column" style="width: 100%;">  
                 <label for="Email_">Phone Number</label><br>               
                 <div class="multipleSelection"> 
@@ -128,22 +134,14 @@
                       <input type="checkbox" id="selectAll" onchange="toggleAllCheckboxes(this)" /> 
                       Select All 
                     </label> 
-                    <label for="first"> 
-                      <input type="checkbox" id="first" /> 
-                      0789383838 
-                    </label> 
-                    <label for="second"> 
-                      <input type="checkbox" id="second" /> 
-                      0789383839
-                    </label> 
-                    <label for="third"> 
-                      <input type="checkbox" id="third" /> 
-                      0789383840
-                    </label> 
-                    <label for="fourth"> 
-                      <input type="checkbox" id="fourth" /> 
-                      0789383841
-                    </label> 
+                    <?php
+                      while($row = mysqli_fetch_array($donors)){
+                        echo "<label for=\"".$row['phoneCode']."\"> 
+                        <input type=\"checkbox\" id=\"256".$row['tel']."\" name=\"phones[]\" value=\"256".$row['tel']."\" /> 
+                        ".$row['phoneCode']." ".$row['tel']." (".$row['sname']." ".$row['fname'].") 
+                      </label> ";
+                      }
+                    ?>
                   </div> 
                 </div> 
                   <div class="field email">
@@ -153,12 +151,21 @@
               </div>
               <div class="form-btn-column">
                 <input type="reset" value="Reset" class="reset">
-                <input type="submit" value="Submit" class="register">
+                <input type="submit" value="Submit" class="register" name="send">
               </div>             
           </form>
       </div>
 
-
+<?php
+  if(isset($_POST['send'])){
+    include('../include/smsapi.php');
+    $message = $_POST['message'];
+    $phones = $_POST['phones'];
+    $phones = implode(",",$phones);
+    $response = send_message($message, $phones);
+    echo $response;
+  }
+?>
       </div>
     </div> 
   </section>
