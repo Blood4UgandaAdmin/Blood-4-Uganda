@@ -5,15 +5,11 @@
 	<body>	
 		<?php
 			include('dbconfig.php'); //establish connection to db
+			session_start(); 
 			$id = $_GET['id'];
 			$_SESSION["id"] = $id;
-			
-			
 			$alertType = $_POST['alertType'];
-			$facility = $_POST['facility'];
-			$bloodBank = $_POST['bloodBank'];
-			$explanation = $_POST['explanation'];
-			$messages = "Congratulations! You have successfully requested for a blood";	
+			$messages = "Thank you for your Alert meassage! Your courage contributes to a transparent and ethical environment. We appreciate your commitment to upholding integrity within our organization";	
 			$alertID="";
 			$notificationid="";
 			
@@ -47,7 +43,7 @@
 		}
 
 			//generate f_supervisor_id
-			$sqlid = "SELECT `requestID` AS max FROM `bloodrequest` ORDER BY `requestID` DESC";
+			$sqlid = "SELECT `alertID` AS max FROM `alert` ORDER BY `alertID` DESC";
 			$resultmax = mysqli_query($conn, $sqlid); 
 			//while($row = mysqli_fetch_array($resultmax)){
 				$row = mysqli_fetch_array($resultmax);
@@ -91,9 +87,9 @@
 				VALUES
 				('$notificationid','$alertID', '$messages', '$id')";
 			//insert into the users table
-			$sql2 = "INSERT INTO alert (alertID, facility,bloodBank, alertType,explanation,alertedBy) 
+			$sql2 = "INSERT INTO alert (alertID, alertType,explanation,alertedBy) 
 						VALUES 
-						('$alertID','$facility', '$bloodBank', '$alertType','$explanation','$id')";
+						('$alertID','$alertType','$explanation','$id')";
 						
 			
 			$result = mysqli_query($conn, $sql); //runs the sql statement

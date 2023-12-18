@@ -270,15 +270,53 @@ body {
   padding: 0.2em;
   height: 2em;
 }
+.multipleSelection { 
+  width: 100%; 
+  background-color: #fff; 
+} 
 
-  
-  span {
-    display: inline-flex;
-    padding: .2em;
-    height: 2em;
-  }
+.selectBox { 
+  position: relative; 
+} 
 
+.selectBox select { 
+  width: 100%; 
+  font-weight: bold; 
+} 
 
+.overSelect { 
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  top: 0; 
+  bottom: 0; 
+} 
+
+#checkBoxes { 
+  display: none; 
+  border-radius: 10px;
+  border: #888 1px solid;
+} 
+
+#checkBoxes label { 
+  padding: 10px;
+  display: block; 
+} 
+#checkBoxes label input{ 
+  width: fit-content;
+} 
+
+#checkBoxes label:hover { 
+  background-color: rgba(136, 0, 0, 0.363); 
+  margin: 5px 3px 5px 3px;
+  border-radius: 30px;
+}
+.col-nav{width: 100%;height: fit-content;margin: 3px;}
+.col-nav .modal-icon{width: 100%;}
+.col-nav .modal-icon a{width: 100%;}
+.col-nav .icon-details{width: 100%;}
+.col-nav .icon-details .icon{width: 10%;}
+.col-nav .icon-details .message-body-notification{width: 100%;}
 .side-two{width: 60%;height: fit-content;padding: 15px;}
 
 /* The Modal (background) */
@@ -1151,9 +1189,7 @@ textarea {
   padding: 0.2em;
   height: 2em;
 }
-.column-password{
-  width: 100%;
-}
+
   
   span {
     display: inline-flex;
@@ -1968,6 +2004,7 @@ input[type=search] {
   width: 100%;
 }
 .show-tab-topbar{display: none;}
+.hide-app{display: none;}
 .field {
   margin: 10px 0px;
 }

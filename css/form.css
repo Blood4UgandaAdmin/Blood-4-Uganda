@@ -137,7 +137,7 @@
     /* For mobile phones: */
     @media only screen and (max-width:500px) {
       *{margin: 0;padding: 0;font-size: 14px;box-sizing: border-box;font-family: 'Raleway', sans-serif;}
-  html,body{display: grid;height: 100%;width: 100%;place-items: center;background-color: #ff00003f;}
+  html,body{display: grid;height: 100%;width: 100%;place-items: center;background: rgba(136, 0, 0, 0.452)}
   ::selection{background: rgba(136, 0, 0, 0.452);color: #fff;}
   .wrapper{overflow: hidden;width: 85%;background: #fff;padding: 30px;border-radius: 5px;box-shadow: 0px 15px 20px rgba(0,0,0,0.1);}
   .wrapper-signup{width: 85%;margin-top: 30px;margin-bottom: 30px;}.section-con{width: 49%;display: block;}
